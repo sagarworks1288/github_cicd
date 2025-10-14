@@ -15,5 +15,7 @@ fs.writeFile("./sample.txt", content, (err) => {
   console.log("File created successfully: sample1.txt");
 });
 
-console.log("Hello, CI/CD! 4x");
+console.log("Current working directory:", process.cwd());
+console.log("Script directory:", __dirname);
+console.log("Hello, CI/CD! 5x");
 
