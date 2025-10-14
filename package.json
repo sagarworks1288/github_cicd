@@ -5,5 +5,7 @@
     "start": "node index.js",
     "test": "node test.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
 }
