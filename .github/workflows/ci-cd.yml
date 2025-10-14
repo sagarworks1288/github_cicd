@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   build-and-test:
@@ -15,7 +15,7 @@ jobs:
     defaults:
       run:
         working-directory: C:\SAGAR\ringc_test\github_cicd
-        
+
     steps:
       - name: Run tests
         run: npm start
