@@ -13,6 +13,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Run tests
+      - name: Chage Path
+        run: cd C:\SAGAR\ringc_test\github_cicd
+
+      - name: pull repo
+        run: git pull origin main
+
+      - name: run code
         run: npm start
 
