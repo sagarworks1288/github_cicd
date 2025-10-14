@@ -12,7 +12,7 @@ fs.writeFile("./sample.txt", content, (err) => {
     console.error("Error writing file:", err);
     return;
   }
-  console.log("File created successfully: sample.txt");
+  console.log("File created successfully: sample1.txt");
 });
 
 console.log("Hello, CI/CD! 4x");
