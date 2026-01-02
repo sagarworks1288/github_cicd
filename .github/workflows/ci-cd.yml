@@ -1,30 +1,36 @@
-name: CI/CD Pipeline
+git remote set-url origin https://TOKEN@github.com/tree-fit/treefit-frontend.git
+
+
+
+.github/workflows/ci_cd.yml
+
+
+name: Treefit Backend CI/CD
 
 on:
   push:
     branches:
-      - main
-  # pull_request:
-  #   branches:
-  #     - main
+      - staging
 
 jobs:
-  build-and-test:
+  build-and-deploy:
     runs-on: self-hosted
 
     defaults:
       run:
-        working-directory: C:\SAGAR\ringc_test\github_cicd
+        working-directory: /home/ubuntu/treefit-backend
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  
-
-      - name: Update repo
+      - name: Take pull of staging
         run: |
-          git pull origin main
+          git pull origin staging
 
-      - name: Run tests
-        run: npm start
+      - name: Build and reload pm2
+        run: |
+          pm2 reload 0
+
+
+          mkdir actions-runner-frontend && cd actions-runner-frontend
+
+
+          pm2 start ./run.sh --name github_runner_frontend --interpreter bash
